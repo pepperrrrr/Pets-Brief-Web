@@ -46,7 +46,7 @@ export default{
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .bottomBar{
     position: fixed;
@@ -66,24 +66,22 @@ export default{
     align-items: center;
     flex-direction: column-reverse;
     font-size: 12px;
-    color:#2c2c2c
-}
-
-.bottomItem .bottomImage{
-    height: 50%;
-    margin-bottom: 6px;
-}
- img{
-    width: 100%;
-    height: 100%;
-}
-
-.selected{
+    color:#2c2c2c;
+    .bottomImage{
+        height: 50%;
+        margin-bottom: 6px;
+         img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .selected{
     color: #d81e06;
-}
+    }
 
-.unselected{
-    color:#2c2c2c
+    .unselected{
+        color:#2c2c2c
+    }
 }
 
 </style>
