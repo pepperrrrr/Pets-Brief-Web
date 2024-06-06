@@ -14,22 +14,22 @@ export default{
     data( ){
         return{
             routeList:[{
-                    title: 'homePage',
+                    title: 'Home',
                     path: '/Home',
                     active: '/img/首页-置灰.png',
                     selected: '/img/首页.png',
                     },{
-                        title: 'listPage',
+                        title: 'List',
                         path: '/List',
                         active: '/img/分享-置灰.png',
                         selected: '/img/分享.png',
                     },{
-                        title: 'cartPage',
+                        title: 'Cart',
                         path: '/Cart',
                         active: '/img/消息-置灰.png',
                         selected: '/img/消息.png',
                     },{
-                        title: 'minePage',
+                        title: 'Mine',
                         path: '/Mine',
                         active: '/img/个人中心-置灰.png',
                         selected: '/img/个人中心.png',
@@ -53,10 +53,11 @@ export default{
     z-index: 999;
     left:0;
     bottom: 0;
-    height: 60px;
+    height: 40px;
     width: 100%;
     display: flex;
     background-color: #FFF;
+    padding: 6px 0;
 }
 
 .bottomItem{
@@ -66,6 +67,7 @@ export default{
     align-items: center;
     flex-direction: column-reverse;
     font-size: 12px;
+    font-weight: bold;
     color:#2c2c2c;
     .bottomImage{
         height: 50%;

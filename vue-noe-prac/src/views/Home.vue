@@ -2,19 +2,26 @@
 <template>
     <div class="home">
         <Header></Header>
-        这是首页内容
-        <tabBar></tabBar>
+        <Brief></Brief>
+        <headTab></headTab>
+        <productSection></productSection>
     </div>
 </template>
 
 <script>
 import Header from '@/components/home/Header.vue'
+import Brief from '@/components/home/Brief.vue'
+import productSection from '@/components/home/productSection.vue'
+import headTab from '@/components/home/headerTab.vue'
 import tabBar from '@/components/common/tabBar.vue'
 export default{
     name: "page-Home",
     components:{
         tabBar,
-        Header
+        Header,
+        headTab,
+        productSection,
+        Brief
     }
 };
 
