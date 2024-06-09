@@ -4,6 +4,7 @@ const state = {
   isShow: false,
   tableList: [],
   infoData: null,
+  priceSymbol:'$',
   petsData: {}
 };
 

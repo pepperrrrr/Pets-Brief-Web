@@ -1,7 +1,7 @@
 <template>
     <div class="tabBar" ref="tabBar" :class="stickyStatus ? 'stickyBar' : '' ">
         <div class="bar">
-            <button v-for="(item,index) in tabData"  :key="index" class="barButton" @click="changeStatus(index)">
+            <button v-for="(item,index) in tabBarData"  :key="index" class="barButton" @click="changeStatus(index)">
                 <div class="buttonItem" :class="item.selected ? 'selectedItem' : '' ">
                     {{ item.name }}
                 </div>
@@ -14,19 +14,19 @@
 <script>
 
 export default {
+    props:["tabData"],
     data(){
         return {
             barHeight: 0,
             tabScrollTop: 0,
             onScrollTop: 0,
-            stickyStatus: false 
+            stickyStatus: false
         }
     },
-    props:['tabData'],
     methods: {
         changeStatus(index){
-            this.tabData.forEach((item,i) => {
-                this.tabData[i].selected = i == index ? true : false;
+            this.tabBarData.forEach((item,i) => {
+                this.tabBarData[i].selected = i == index ? true : false;
             })
         },
         checkSticky(){
@@ -51,8 +51,13 @@ export default {
         }
     },
     mounted(){
-        this.checkSticky()
+        this.checkSticky();
     },
+    computed:{
+        tabBarData(){
+            return this.tabData
+        }
+    }
 }
 
 </script>

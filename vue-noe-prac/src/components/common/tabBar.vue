@@ -1,10 +1,10 @@
 <template>
-    <div class="bottomBar">
+    <div class="bottomBar" @click="triggerDialog()">
         <div class="stickyBar"></div>
         <div class="bottomContent">
             <div class="bottomText"><b>Filter to refine your search</b></div>
             <div class="bottomIcon">
-                <img src="/img/个人中心-置灰.png" alt="">
+                <img src="/img/petsLove.png" alt="">
             </div>
         </div>
     </div>
@@ -41,6 +41,9 @@ export default{
         changeStatus(path){
             if(path == this.$route.path) return 
             this.$router.replace(path)
+        },
+        triggerDialog(){
+
         }
     }
 }
@@ -73,8 +76,13 @@ export default{
         .bottomIcon{
             height: 48px;
             width: 48px;
+            border: 2px solid #a4a2a2;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             img{
-                width: 100%;
+                width: 100%; 
                 height: 100%;
             }
         }

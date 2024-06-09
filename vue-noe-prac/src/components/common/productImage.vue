@@ -16,7 +16,16 @@
                     <div class="featureImage">
                         <img :src="item.imageUrl" alt="">
                     </div>
-                    <div class="featureDesc">{{ item.description }}</div>
+                    <div class="pricePart" v-if="item?.averagePrice">
+                        <div class="priceText">Average Price</div>
+                        <div class="featurePrice">{{ priceSymbol }} {{ item?.averagePrice}}</div>
+                    </div>
+                    <div class="featureButtom">
+                        <button class="detailButton">Detail</button>
+                        <div class="likeIcon">
+                            <img src="/like.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </swiper-slide>
         </swiper-container>
@@ -27,6 +36,7 @@
 <script>
 import { register } from 'swiper/element/bundle'
 import skeleton from '@/components/common/skeleton.vue'
+import store from '@/store/index'
 
 register()
 
@@ -43,7 +53,8 @@ export default {
     },
     data(){
         return {
-            loading: true
+            loading: true,
+            priceSymbol: ''
         }
     },
 
@@ -59,6 +70,9 @@ export default {
         this.$nextTick(()=>{
             this.loading = false;
         })
+    },
+    mounted(){
+        this.priceSymbol = store.state.map.priceSymbol;
     }
 }
 
@@ -77,7 +91,7 @@ export default {
             .featureImage{
                 display: flex;
                 justify-content: center;
-                align-content: center;
+                align-items: center;
                 height: 163px;
                 margin: 16px 0;
                 img{
@@ -89,10 +103,43 @@ export default {
                 font-size: 20px;
                 color: #171717;
             }
-            .featureDesc{
-                font-size: 16px;
-                color: #4e444e;
-                word-wrap: break-word;
+            .pricePart{
+                .priceText{
+                    font-size: 16px;
+                    color: black;
+                    margin-bottom: 8px;
+                }
+                .featurePrice{
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+            }
+            .featureButtom{
+                margin-top: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .likeIcon{
+                    height: 48px;
+                    width: 48px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .detailButton{
+                    height: 48px;
+                    border: 2px solid #a4a2a2;
+                    background-color: #FFF;
+                    color: #171717;
+                    border-radius: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                    padding: 16px;
+                }
             }
             .featureNation{
                 margin: 16px 0;
