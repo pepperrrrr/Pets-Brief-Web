@@ -1,7 +1,9 @@
 <template>
-    <div class="productSection">
-        <div class="featureTitle">Features of  Maine Coon</div>
-        <productFeature></productFeature>  
+    <div>
+        <div  class="productSection" v-for="(item,index) in sectionList" :key="index" :style="{backgroundImage:'url('+item.backgroundImg+')'}">
+           <div class="featureTitle">The Star of the {{ item.name }}</div>
+            <productFeature :featureData="item.imageList"></productFeature>  
+        </div>
     </div>
 </template>
 
@@ -12,11 +14,7 @@ export default{
     components: {
         productFeature
     },
-    data(){
-        return {
-
-        }
-    }
+    props: ['sectionList']
 }
 
 </script>
@@ -24,9 +22,9 @@ export default{
 
 <style lang="scss" scoped>
 .productSection{
-    min-height: 690px;
+    padding-bottom: 48px;
     width: 100%;
-    background-image: url(C:\Users\peppe\Desktop\free-pro\vNodePrac\vue-noe-prac\public\featureBack.jpg);
+    background-color: #171717;
     .featureTitle{
         color: #FFF;
         font-size: 32px;

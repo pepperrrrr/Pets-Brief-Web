@@ -9,8 +9,10 @@
         @swiperprogress="onPrpgress" 
         @swiperslidechange="onSlideChange">
             <swiper-slide v-for="(item,index) in imageList" :key="index">
-                <div class="featureContainer">
+                <skeleton v-if="loading"></skeleton>
+                <div v-else class="featureContainer">
                     <div class="featureTitle">{{ item.title }}</div>
+                    <div class="featureNation">{{ item.nation }}</div>
                     <div class="featureImage">
                         <img :src="item.imageUrl" alt="">
                     </div>
@@ -24,11 +26,15 @@
 
 <script>
 import { register } from 'swiper/element/bundle'
+import skeleton from '@/components/common/skeleton.vue'
 
 register()
 
 export default {
     name: 'productImage',
+    components:{
+        skeleton
+    },
     props: {
         imageList:{
             type: Array,
@@ -36,18 +42,23 @@ export default {
         }
     },
     data(){
-        return{
+        return {
+            loading: true
         }
     },
 
     methods: {
         onPrpgress(e){
             const [swiper, progress] = e.detail;
-            console.log(progress, this.imageList)
         },
         onSlideChange(e){
             console.log('slide change')
         }
+    },
+    created(){
+        this.$nextTick(()=>{
+            this.loading = false;
+        })
     }
 }
 
@@ -82,6 +93,12 @@ export default {
                 font-size: 16px;
                 color: #4e444e;
                 word-wrap: break-word;
+            }
+            .featureNation{
+                margin: 16px 0;
+                font-size: 16px;
+                color: #4e444e;
+                font-weight: bold;
             }
         }
     }

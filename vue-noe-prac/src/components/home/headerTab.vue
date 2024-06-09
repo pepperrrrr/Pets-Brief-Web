@@ -16,23 +16,13 @@
 export default {
     data(){
         return {
-            tabData:[
-                {name: 'Maine Coon', value:'maineCoon', selected: true},
-                {name: 'Minuet',  value:'minuet', selected: false},
-                {name: 'Norwegian Forest', value:'norwegianForest',  selected: false},
-                {name: 'Ragdoll',  value:'ragdoll', selected: false},
-                {name: 'Abyssinian',  value:'abyssinian', selected: false},
-                {name: 'American Shorthairs',  value:'americanShorthairs', selected: false},
-                {name: 'British Shorthair',  value:'britishShorthair', selected: false},
-                {name: 'Munchkin',  value:'munchkin', selected: false},
-            ],
             barHeight: 0,
             tabScrollTop: 0,
             onScrollTop: 0,
             stickyStatus: false 
         }
     },
-
+    props:['tabData'],
     methods: {
         changeStatus(index){
             this.tabData.forEach((item,i) => {

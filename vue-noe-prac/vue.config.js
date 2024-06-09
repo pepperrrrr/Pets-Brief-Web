@@ -5,17 +5,17 @@ module.exports = defineConfig({
   transpileDependencies: true,
   //取消eslint校验
    lintOnSave: false,
-  // devServer: {
-  //   proxy: {
-  //     '/api': {
-  //       target: "http://localhost:3000",
-  //       changeOrigin: true,
-  //       pathRewrite: {
-  //         '^/api': '/api'
-  //       }
-  //     }
-  //   }
-  // },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api' 
+        }
+      }
+    }
+  },
   configureWebpack:(config) => {
     //resovle配置webpack如何寻找模块所对应文件
     config.resolve = {

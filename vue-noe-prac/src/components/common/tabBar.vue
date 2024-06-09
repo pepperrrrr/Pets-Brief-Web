@@ -1,11 +1,12 @@
 <template>
     <div class="bottomBar">
-        <div v-for="(item,index) in routeList" :key="index" class="bottomItem" @click="changeStatus(item.path,item.status)">
-            <div :class="$route.path == item.path ? 'selected' : 'unselected'">{{ item.title }}</div>
-            <div class="bottomImage">
-                <img :src="$route.path == item.path ? item.selected : item.active" alt="">
+        <div class="stickyBar"></div>
+        <div class="bottomContent">
+            <div class="bottomText"><b>Filter to refine your search</b></div>
+            <div class="bottomIcon">
+                <img src="/img/个人中心-置灰.png" alt="">
             </div>
-    </div>
+        </div>
     </div>
 </template>
 
@@ -53,36 +54,36 @@ export default{
     z-index: 999;
     left:0;
     bottom: 0;
-    height: 40px;
     width: 100%;
-    display: flex;
     background-color: #FFF;
-    padding: 6px 0;
-}
-
-.bottomItem{
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    font-size: 12px;
-    font-weight: bold;
-    color:#2c2c2c;
-    .bottomImage{
-        height: 50%;
-        margin-bottom: 6px;
-         img{
-            width: 100%;
-            height: 100%;
+    border: 1px solid #0000001A;
+    border-radius: 12px 12px 0px 0px;
+    box-shadow: 0px -3px 10px 0px rgba(0,0,0,0.3);
+    .bottomContent{
+        display: flex;
+        padding: 16px 20px;
+        justify-content: space-between;
+        align-content: center;
+        .bottomText{
+            font-size: 16px;
+            text-align: left;
+            line-height: 1.6;
+            color: #171717;
+        }
+        .bottomIcon{
+            height: 48px;
+            width: 48px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
-    .selected{
-    color: #d81e06;
-    }
-
-    .unselected{
-        color:#2c2c2c
+    .stickyBar{
+        width: 77px;
+        height:10px;
+        margin: 0 auto; 
+        border-bottom: 4px solid #e8e8e8;
     }
 }
 

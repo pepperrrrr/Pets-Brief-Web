@@ -1,18 +1,29 @@
 <template>
     <h1 class="brief">
-        <div class="subTitle">PETS</div>
-        <div class="title">Cats</div>
-        <div class="description">FIND THE CATS THAT YOU LIKE.</div>
+        <div class="subTitle">{{ BriefData.subTitle }}</div>
+        <div class="title">{{ BriefData.title }}</div>
+        <div class="description">{{ BriefData.description }}</div>
     </h1>
 </template>
 
-
 <script>
 
+export default{
+    data(){
+        return {
+            briefData:{}
+        }
+    },
+    props: {
+        BriefData:{
+            type: Object,
+            required: true
+        }
+    },
+}
 
 
 </script>
-
 
 <style lang="scss" scoped>
 .brief{
