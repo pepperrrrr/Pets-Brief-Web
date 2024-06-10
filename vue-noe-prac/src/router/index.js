@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/home",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
@@ -16,18 +16,23 @@ const routes = [
   },
   {
     path: "/cats",
-    name: "Cats",
+    name: "cats",
     component: () => import("../views/Cats.vue"),
   },
   {
     path: "/dogs",
-    name: "Dogs",
+    name: "dogs",
     component: () => import("../views/Dogs.vue"),
   },
   {
     path: "/mine",
-    name: "Mine",
+    name: "mine",
     component: () => import("../views/Mine.vue"),
+  },
+  {
+    path: "/otherSpecies",
+    name: "otherSpecies",
+    component: () => import("../views/OtherSpecies.vue"),
   },
 ];
 

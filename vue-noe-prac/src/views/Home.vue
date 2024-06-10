@@ -2,16 +2,19 @@
 <template>
     <div class="home">
         <Header></Header>
+        <homeSwiper></homeSwiper>
     </div>
 </template>
 
 <script>
 import Header from '@/components/home/Header.vue'
+import homeSwiper from '@/components/home/homeSwiper.vue'
 import store from '@/store/index'
 export default{
     name: "page-Home",
     components:{
-        Header
+        Header,
+        homeSwiper
     },
     data(){
         return{

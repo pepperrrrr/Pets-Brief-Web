@@ -26,8 +26,9 @@ export default{
                 {id: 0, name: 'Home', value: 'home', path: '/home'},
                 {id: 1, name: 'Cats', value: 'cats', path: '/cats'},
                 {id: 2, name: 'Dogs', value: 'dogs', path: '/dogs'},
-                {id: 3, name: 'User', value: 'user', path: '/user'},
-                {id: 4, name: 'Favorite', value: 'favorite', path: '/favorite'}
+                {id: 3, name: 'Other Species', value: 'otherSpecies', path: '/otherSpecies'},
+                {id: 4, name: 'User', value: 'user', path: '/user'},
+                {id: 5, name: 'Favorite', value: 'favorite', path: '/favorite'}
             ]
         }
     },
@@ -36,7 +37,10 @@ export default{
             this.$emit('getDialogStatus',true)
         },
         jumpPage(path){
-            if(path == this.$route.path) return 
+            if(path == this.$route.path){
+                this.$emit('getDialogStatus',true)
+                return 
+            }
             this.$router.replace(path)
         },
     }
