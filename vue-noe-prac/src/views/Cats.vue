@@ -2,19 +2,34 @@
 <template>
     <div class="home">
         <Header></Header>
+        <Brief :BriefData="briefData"></Brief>
+        <headTab :tabData="tabList"></headTab>
+        <productSection :sectionList="sectionList"></productSection>
+        <tabBar></tabBar>
     </div>
 </template>
 
 <script>
 import Header from '@/components/home/Header.vue'
+import Brief from '@/components/home/Brief.vue'
+import productSection from '@/components/home/productSection.vue'
+import headTab from '@/components/home/headerTab.vue'
+import tabBar from '@/components/common/tabBar.vue'
 import store from '@/store/index'
 export default{
     name: "page-Home",
     components:{
-        Header
+        tabBar,
+        Header,
+        headTab,
+        productSection,
+        Brief
     },
     data(){
         return{
+            briefData:{},
+            tabList:[],
+            sectionList:[]
         }
     },
     mounted(){

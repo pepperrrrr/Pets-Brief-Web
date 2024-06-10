@@ -12,17 +12,17 @@ const routes = [
   },
   {
     path: "/",
-    redirect: "/Home",
+    redirect: "/home",
   },
   {
-    path: "/list",
-    name: "List",
-    component: () => import("../views/List.vue"),
+    path: "/cats",
+    name: "Cats",
+    component: () => import("../views/Cats.vue"),
   },
   {
-    path: "/cart",
-    name: "Cart",
-    component: () => import("../views/Cart.vue"),
+    path: "/dogs",
+    name: "Dogs",
+    component: () => import("../views/Dogs.vue"),
   },
   {
     path: "/mine",

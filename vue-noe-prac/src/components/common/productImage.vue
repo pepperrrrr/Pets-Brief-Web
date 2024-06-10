@@ -1,7 +1,7 @@
 <template>
     <div class="imageSwier">
         <swiper-container
-        :slides-per-view="1.2"
+        :slides-per-view="1.4"
         :space-between="16"
         :slides-offset-before="16"
         :slides-offset-after="16"
@@ -22,9 +22,7 @@
                     </div>
                     <div class="featureButtom">
                         <button class="detailButton">Detail</button>
-                        <div class="likeIcon">
-                            <img src="/like.png" alt="">
-                        </div>
+                        <button class="likeButton">Like</button>
                     </div>
                 </div>
             </swiper-slide>
@@ -94,9 +92,6 @@ export default {
                 align-items: center;
                 height: 163px;
                 margin: 16px 0;
-                img{
-                    height: 100%;
-                }
             }
             .featureTitle{
                 font-weight: bold;
@@ -120,15 +115,7 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                .likeIcon{
-                    height: 48px;
-                    width: 48px;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                .detailButton{
+                button{
                     height: 48px;
                     border: 2px solid #a4a2a2;
                     background-color: #FFF;

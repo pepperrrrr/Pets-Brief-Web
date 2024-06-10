@@ -1,6 +1,7 @@
 <template>
     <div class="productList">
         <div class="listTitle"></div>
+        
     </div>
 </template>
 
