@@ -7,6 +7,9 @@
             </div>
         </div>
         <div @click="nextSlide" class="carousel-prev-icon-right"></div>
+        <div class="swiperDots">
+            <div v-for="(item,index) in homeSwiperList" :key="index" class="dot" :class="index === currentSlide ? ' selectDot': ''"></div>
+        </div>
     </div>
 </template>
 
@@ -31,7 +34,7 @@ export default{
     },
     mounted() {
     // 自动播放动画
-        this.startSlideshow()
+        // this.startSlideshow()
     },
     methods:{
         nextSlide() {
@@ -46,17 +49,7 @@ export default{
         },
         // 图片动画
         setStyle() {
-            this.dynamicstyle = `translatex(-${this.currentSlide*100}%)`
-        },
-        // 定时器
-        startSlideshow() {
-            this.interval = setInterval(() => {
-                this.currentSlide = (this.currentSlide + 1) % this.homeSwiperList.length;
-                this.setStyle();
-            }, 3000)
-        },
-        stopSlideshow() {
-            clearInterval(this.interval)
+            this.dynamicstyle = `translatex(-${this.currentSlide * 100}%)`
         }
     }
 }
@@ -95,6 +88,28 @@ export default{
                 letter-spacing: -0.96px;
                 font-weight: bolder;
             }
+        }
+    }
+    .swiperDots{
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 28px;
+        background: #E3E3E36B 0% 0% no-repeat padding-box;
+        border-radius: 13px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        .dot{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #FFF;
+            margin: 0 4px;
+        }
+        .selectDot{
+            background-color: #FFF;
         }
     }
 }
