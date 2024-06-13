@@ -2,7 +2,7 @@
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path');
 module.exports = defineConfig({
-  // publicPath:'./',
+  publicPath:'./',
   transpileDependencies: true,
   //取消eslint校验
    lintOnSave: false,
