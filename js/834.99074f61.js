@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_noe_prac"]=self["webpackChunkvue_noe_prac"]||[]).push([[834],{3834:function(e,n,r){r.r(n),r.d(n,{default:function(){return l}});var s=function(){var e=this,n=e._self._c;return n("div",{staticClass:"otherSpecies"},[n("Header")],1)},t=[],a=r(2261),u={name:"other-species",components:{Header:a.A}},c=u,o=r(4008),i=(0,o.A)(c,s,t,!1,null,"54ea3ab8",null),l=i.exports}}]);
+//# sourceMappingURL=834.99074f61.js.map
