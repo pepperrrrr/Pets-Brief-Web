@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_noe_prac"]=self["webpackChunkvue_noe_prac"]||[]).push([[934],{934:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var t=function(){var n=this,e=n._self._c;return e("div",{staticClass:"mine"})},s=[],a={name:"page-Mine",components:{}},c=a,l=u(4008),r=(0,l.A)(c,t,s,!1,null,null,null),i=r.exports}}]);
+//# sourceMappingURL=934.15ccd070.js.map
